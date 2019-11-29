@@ -2,10 +2,10 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import Header from './components/common/header';
-import CourseCard from './components/CourseCard';
-import Courses from "./components/Courses";
+import CardTemplate from './components/CardTemplate';
 import Home from './components/Home';
 import {Route, BrowserRouter} from 'react-router-dom';
+import SearchInput from './components/common/SearchInput';
 
 class App extends React.Component {
     constructor(props) {
@@ -43,6 +43,11 @@ class App extends React.Component {
 
             <div>
                 <Header name="Manabu"/>
+                <div style={{backgroundColor: "#28328c", color: "#ffffff", height: "300px"}}>
+                    <h1 style={{marginTop: "0"}}>Learn courses online</h1>
+                    <h3>Learn every topic. At your pace.</h3>
+                    <SearchInput/>
+                </div>
                 <div>
                     {/*{this.state.courseList && this.state.courseList.length >0 ?  this.state.courseList[0].name:""}*/}
                     {/*{this.state.isClicked ?*/}
@@ -50,7 +55,7 @@ class App extends React.Component {
                     <BrowserRouter>
                         <Route path="/" exact component={Home}/>
                         <Route path="/manabu/" exact component={Home}/>
-                        <Route path="/manabu/courses" component={(props) => <CourseCard {...props} handleOnClick={this.handleOnClick}  courseList={this.state.courseList} />}/>
+                        <Route path="/manabu/courses" component={(props) => <CardTemplate {...props} handleOnClick={this.handleOnClick} courseList={this.state.courseList} />}/>
                     </BrowserRouter>
                 </div>
             </div>

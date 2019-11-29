@@ -1,11 +1,11 @@
 import React from 'react';
 import axios from "axios";
 
-class Instructors extends React.Component{
+class CourseView extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            instructorList: []
+            courseList: []
         };
 
     }
@@ -17,15 +17,15 @@ class Instructors extends React.Component{
 
     // Retrieves the list of items from the Express app
     getList = () => {
-        axios.get('http://localhost:8000/manabu/api/v1/instructor')
+        axios.get('http://localhost:8000/manabu/api/v1/course')
             .then(jsonResp => {
-                console.dir("Instructors: "+jsonResp);
-                this.setState({ instructorList: jsonResp.data.data})
+                console.dir("CourseView: "+jsonResp);
+                this.setState({ courseList: jsonResp.data.data})
             })
             .catch((err)=>{console.dir(err)})
     }
     render(){
-        const courses = this.state.instructorList.map((course,key) =>
+        const courses = this.state.courseList.map((course,key) =>
             <li key={course.id}>{course.name}</li>
         );
         return (<div>
@@ -36,4 +36,4 @@ class Instructors extends React.Component{
     }
 }
 
-export default Instructors;
+export default CourseView;

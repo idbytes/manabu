@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import logo from "../../logo.png";
+import CustomizedSelects from "../common/SelectInput"
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -27,7 +28,7 @@ export default function ButtonAppBar() {
                 <Toolbar>
                         <img src={logo} alt="Logo"/>
                     <Typography variant="h6" className={classes.title}>
-                        Categories
+                        <CustomizedSelects />
                     </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>

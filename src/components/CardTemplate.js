@@ -7,8 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import PropTypes from "prop-types";
-import Instructors from "./Instructors";
-import Courses from "./Courses";
+import InstructorView from "./InstructorView";
+import CourseView from "./CourseView";
 import { Route, Switch } from 'react-router-dom';
 
 const useStyles = makeStyles({
@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     },
 });
 
-class CourseCard extends React.Component {
+class CardTemplate extends React.Component {
     classes = useStyles;
 
     static propTypes = {
@@ -38,8 +38,8 @@ class CourseCard extends React.Component {
                     />
                     <CardContent onClick={this.props.handleOnClick}>
                         <Switch>
-                            <Route exact path='/manabu/api/v1/courses' component={Courses}/>
-                            <Route path='/manabu/api/v1/instructors' component={Instructors}/>
+                            <Route exact path='/manabu/api/v1/courses' component={CourseView}/>
+                            <Route path='/manabu/api/v1/instructors' component={InstructorView}/>
                         </Switch>
                     </CardContent>
                 </CardActionArea>
@@ -56,7 +56,7 @@ class CourseCard extends React.Component {
     }
 }
 
-export default CourseCard;
+export default CardTemplate;
 
 
 
