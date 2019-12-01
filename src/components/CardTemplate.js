@@ -7,9 +7,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import PropTypes from "prop-types";
-import InstructorView from "./InstructorView";
-import CourseView from "./CourseView";
-import { Route, Switch } from 'react-router-dom';
 
 const useStyles = makeStyles({
     card: {
@@ -37,10 +34,6 @@ class CardTemplate extends React.Component {
                         title="Contemplative Reptile"
                     />
                     <CardContent onClick={this.props.handleOnClick}>
-                        <Switch>
-                            <Route exact path='/manabu/api/v1/courses' component={CourseView}/>
-                            <Route path='/manabu/api/v1/instructors' component={InstructorView}/>
-                        </Switch>
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
