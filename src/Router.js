@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
 import Home from './pages/Home';
-import BrowserRouter from "react-router-dom/modules/BrowserRouter";
-import {Route} from "react-router-dom";
+import {Route,BrowserRouter} from "react-router-dom";
 import CourseView from "./components/CourseView";
 import CourseFilterPage from "./pages/CourseFilterPage";
 

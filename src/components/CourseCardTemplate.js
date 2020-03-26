@@ -17,12 +17,14 @@ const useStyles = makeStyles({
     },
 });
 
-class CardTemplate extends React.Component {
+class CourseCardTemplate extends React.Component {
     classes = useStyles;
-
     static propTypes = {
-        handleOnClick: PropTypes.func.isRequired
+        course: PropTypes.object.isRequired
     };
+    constructor(props){
+        super(props);
+    }
 
     render() {
         return (
@@ -33,7 +35,8 @@ class CardTemplate extends React.Component {
                         image="/static/images/cards/contemplative-reptile.jpg"
                         title="Contemplative Reptile"
                     />
-                    <CardContent onClick={this.props.handleOnClick}>
+                    <CardContent>
+                        {this.props.course.name}
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
@@ -49,7 +52,7 @@ class CardTemplate extends React.Component {
     }
 }
 
-export default CardTemplate;
+export default CourseCardTemplate;
 
 
 

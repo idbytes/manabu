@@ -2,7 +2,7 @@ import React from 'react';
 import CourseView from "../components/CourseView";
 import InstructorView from "../components/InstructorView";
 import Header from "../components/common/header";
-import SearchInput from "../components/common/SearchInput";
+import SearchBar from "../components/common/SearchBar";
 import {Route, BrowserRouter} from 'react-router-dom';
 import axios from "axios";
 
@@ -36,8 +36,8 @@ class Home extends React.Component{
                 <Header name="Manabu"/>
                 <div style={{backgroundColor: "#28328c", color: "#ffffff", height: "300px"}}>
                     <h1 style={{marginTop: "0"}}>Learn courses online</h1>
-                <h3>Learn every topic. At your pace.</h3>
-                <SearchInput/>
+                <h3>Course page.</h3>
+                <SearchBar/>
                 </div>
 
                 <h3>Courses:</h3>
